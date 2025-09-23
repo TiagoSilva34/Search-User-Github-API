@@ -1,4 +1,5 @@
 import { CardUserInfoProps } from "./types"
+import Image from "next/image"
 
 export const CardUserInfo = ({
     user,
@@ -6,7 +7,7 @@ export const CardUserInfo = ({
     return (
         <div>
             <div>
-                {/* <Image src={user?.avatar_url} alt={user?.login} /> */}
+                <Image src={user?.avatar_url} alt={user?.login} width={180} height={180} priority />
 
                 <div>
                     <h1>{user?.name || ""}</h1>
