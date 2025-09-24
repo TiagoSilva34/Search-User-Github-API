@@ -2,6 +2,7 @@ import { Input } from "@/Input/Input";
 import { useState } from "react";
 import { Button } from "../Button/Button";
 import { IFormProps } from "./types";
+import styles from "./styles.module.css"
 
 export const Form = ({
   handleSearchData
@@ -15,14 +16,14 @@ export const Form = ({
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <Input
         type="text"
         placeholder="Buscar usuário"
         value={search}
         onChange={setSearch}
       />
-      <Button type="submit">
+      <Button type="submit" disabled={search ? false : true} >
         Buscar 
       </Button>
     </form>
