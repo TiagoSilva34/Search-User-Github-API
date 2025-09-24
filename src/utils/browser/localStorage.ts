@@ -1,18 +1,26 @@
-export const localStorageHandler = {
-    saveDataInStorage: (key: string, data: string | string[]) => {
+class LocalStorageHandler {
+    saveData(key: string, value: string | string[]) {
+        const informations = {
+            info: value,
+            timeStamp: new Date(),
+        };
+
         try {
-            const value = JSON.stringify(data);
-            localStorage.setItem(key, value)
+            const serializedValue = JSON.stringify(informations);
+            localStorage.setItem(key, serializedValue);
         } catch (error) {
-            console.error("Error saving data to localStorage", error);   
+            console.error("Error saving data to localStorage", error);
         }
-    },
-    retrieveDataFromStorage: (key: string) => {
+    }
+    retrieveData(key: string) {
         try {
-            return JSON.parse(localStorage.getItem(key) as string) || null;
+            const value = localStorage.getItem(key);
+            return value ? JSON.parse(value) : null;
         } catch (error) {
-            console.error("Error getting data from localStorage", error);
+            console.error("Error retrieving data from localStorage", error);
             return null;
         }
-    },
+    }
 }
+
+export const localStorageHandler = new LocalStorageHandler();
