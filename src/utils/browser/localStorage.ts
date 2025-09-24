@@ -9,8 +9,7 @@ export const localStorageHandler = {
     },
     retrieveDataFromStorage: (key: string) => {
         try {
-            const value = localStorage.getItem(key);
-            return value ? JSON.parse(value) : null;
+            return JSON.parse(localStorage.getItem(key) as string) || null;
         } catch (error) {
             console.error("Error getting data from localStorage", error);
             return null;
