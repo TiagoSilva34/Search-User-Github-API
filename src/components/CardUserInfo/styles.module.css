@@ -1,0 +1,48 @@
+.avatar img {
+    border-radius: 300px;
+    border: 6px solid #ccc;
+}
+
+.username {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.username span:nth-child(1) {
+    font-weight: 500;
+    font-size: 1.4em;
+    color: #fff;
+}
+
+.username span:nth-child(2) {
+    font-weight: 100;
+    font-size: 1em;
+    color: #808080;
+}
+
+/* ---- */
+
+.bio {
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+}
+
+/* ---- */
+
+.follow, .repositories, .location, .member {
+    display: flex;
+    gap: 8px;
+}
+
+.follow span:nth-child(1),
+.follow span:nth-child(4),
+.repositories span:nth-child(1),
+.member span:nth-child(1)  {
+    color: #808080;
+    font-weight: 100;
+    font-size: 1em;
+}
+
