@@ -41,7 +41,7 @@ export const Layout = () => {
     <>
       <Form handleSearchData={handleSearchData} />
       {user && (
-        <div>
+        <div style={{ marginBottom: '16px'}}>
           <HistorySearch
             handleUserSearchCache={handleUserSearchCache}
             userSearchCache={userSearchCache}
