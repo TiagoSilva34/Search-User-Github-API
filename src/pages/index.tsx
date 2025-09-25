@@ -1,10 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import { Button } from "@/components/Button/Button";
 import { Layout } from "@/components/Layout/Layout";
-import { useUserSearch } from "@/hooks/useUserSearch";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
