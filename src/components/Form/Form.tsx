@@ -1,4 +1,4 @@
-import { Input } from "@/Input/Input";
+import { Input } from "@/components/Input/Input";
 import { useState } from "react";
 import { Button } from "../Button/Button";
 import { IFormProps } from "./types";
@@ -23,7 +23,7 @@ export const Form = ({
         value={search}
         onChange={setSearch}
       />
-      <Button type="submit" disabled={search ? false : true} >
+      <Button onClick={() => {}} type="submit" disabled={search ? false : true} >
         Buscar 
       </Button>
     </form>
