@@ -31,9 +31,11 @@ describe('userService', () => {
     it('should throw an error when API call fails', async () => {
         const username = 'johnDoe';
         const error = new Error('API error');
+        const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
         mockGetUsers.mockRejectedValue(error);
 
         await expect(userService.getUsers(username)).rejects.toThrow(error);
         expect(mockGetUsers).toHaveBeenCalledWith(`/users/${username}`);
+        expect(consoleErrorSpy).toHaveBeenCalledWith('Error fetching users:', expect.any(Error));
     });
 })
