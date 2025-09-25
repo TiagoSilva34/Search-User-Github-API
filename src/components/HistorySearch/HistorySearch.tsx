@@ -1,26 +1,34 @@
-import { Button } from "../Button/Button";
 import { IHistorySearchProps } from "./types";
+import styles from "./styles.module.css";
+import { useState } from "react";
 
 export const HistorySearch = ({
   handleUserSearchCache,
   userSearchCache,
-  handleSearchData,
+  handleRenderUserSearch,
+  showModal,
+  setShowModal
 }: IHistorySearchProps) => {
   return (
     <div>
-      <Button type="button" onClick={handleUserSearchCache}>
-        Histórico de buscas
-      </Button>
+      <span className={styles.btn_history} onClick={handleUserSearchCache}>
+        Histórico de buscas+
+      </span>
 
-      <ul>
-        {userSearchCache.map((user: IUserProps) => (
-          <li key={user.id}>
-            <Button type="submit" onClick={() => handleSearchData(user.login)}>
-              {user.name} - @{user.login}
-            </Button>
-          </li>
-        ))}
-      </ul>
+      {showModal && (
+        <ul className={styles.list}>
+          <span onClick={() => setShowModal(false)} className={styles.close}>X</span>
+          {userSearchCache.map((user: IUserProps) => (
+            <div key={user.id} className={styles.list_item}>
+              <li>
+                <span onClick={() => handleRenderUserSearch(user)}>
+                  {user.name} - @{user.login}
+                </span>
+              </li>
+            </div>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
