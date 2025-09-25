@@ -2,12 +2,56 @@
     background-color: transparent;
     color: rgb(5, 5, 160);
     cursor: pointer;
-    padding: 0;
+    padding: 1rem 0;
 }
 
 .list {
-    padding: 0;
-    margin: 0;
-    font-weight: 100;
-    font-size: 12pxl;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.list li span {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.list li span:hover {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: rgb(5, 5, 160);
+}
+
+.list_item {
+    background-color: rgb(21, 20, 20);
+    width: 90%;
+    max-width: 600px;
+    padding: .4rem;
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+    list-style: none;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    font-weight: 500;
+    color: rgb(140, 5, 5);
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    background-color: #cecece;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
