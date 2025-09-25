@@ -1,3 +1,3 @@
 export interface CardUserInfoProps {
-    user: any 
+    user: IUserProps 
 }
